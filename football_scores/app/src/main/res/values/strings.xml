@@ -38,4 +38,6 @@
     <string name="share_description">Share</string>
     <string name="home_emblem">Home emblem</string>
     <string name="away_emblem">Away emblem</string>
+    <string name="no_match">No match</string>
+    <string name="scores">Scores</string>
 </resources>

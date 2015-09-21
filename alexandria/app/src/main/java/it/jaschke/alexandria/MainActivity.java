@@ -11,7 +11,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -183,7 +182,10 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
                 Log.d(TAG, "Scanned");
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                Fragment f = getSupportFragmentManager().findFragmentById(R.id.container);
+
+                if (f != null && f instanceof AddBook)
+                    ((AddBook) f).setBookText(result.getContents());
             }
         } else {
             Log.d(TAG, "Weird");

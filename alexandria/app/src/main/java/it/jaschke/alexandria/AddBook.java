@@ -185,6 +185,11 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
 
     }
 
+    public void setBookText(String code) {
+        if (ean != null)
+            ean.setText(code);
+    }
+
     private void clearFields() {
         ((TextView) rootView.findViewById(R.id.bookTitle)).setText("");
         ((TextView) rootView.findViewById(R.id.bookSubTitle)).setText("");

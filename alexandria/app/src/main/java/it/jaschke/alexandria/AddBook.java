@@ -9,6 +9,7 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -150,6 +151,8 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
     @Override
     public void onLoadFinished(android.support.v4.content.Loader<Cursor> loader, Cursor data) {
         if (!data.moveToFirst()) {
+            Log.d(TAG, "No book");
+            clearFields();
             return;
         }
 

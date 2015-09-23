@@ -17,6 +17,7 @@
             android:gravity="center"
             android:text="@string/test_text"
             android:textColor="@android:color/black"
+            android:contentDescription="@string/league_description"
             android:textSize="@dimen/League" />
 
         <TextView
@@ -27,6 +28,7 @@
             android:gravity="center"
             android:text="@string/test_text"
             android:textColor="@android:color/black"
+            android:contentDescription="@string/matchday_description"
             android:textSize="@dimen/League" />
     </LinearLayout>
 

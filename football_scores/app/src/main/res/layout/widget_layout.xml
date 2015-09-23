@@ -15,6 +15,7 @@
         android:drawableStart="@drawable/ic_launcher"
         android:gravity="center_vertical"
         android:padding="8dp"
+        android:contentDescription="@string/title_description"
         android:text="@string/app_name"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#222222" />
@@ -37,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:contentDescription="@string/no_match"
             android:text="@string/no_match"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#222222" />

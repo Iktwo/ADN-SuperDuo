@@ -40,4 +40,12 @@
     <string name="away_emblem">Away emblem</string>
     <string name="no_match">No match</string>
     <string name="scores">Scores</string>
+    <string name="league_description">League Name</string>
+    <string name="matchday_description">Match day</string>
+    <string name="about_description">About desccription</string>
+    <string name="home_description">Home</string>
+    <string name="score_description">Score</string>
+    <string name="score_value_description">Score Value</string>
+    <string name="away_description">Away</string>
+    <string name="title_description">Title</string>
 </resources>

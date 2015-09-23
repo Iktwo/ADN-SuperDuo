@@ -20,6 +20,8 @@ import android.widget.TextView;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 
+import java.util.ArrayList;
+
 import it.jaschke.alexandria.data.AlexandriaContract;
 import it.jaschke.alexandria.services.BookService;
 import it.jaschke.alexandria.services.DownloadImage;
@@ -72,7 +74,8 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
                     ean = "978" + ean;
                 }
                 if (ean.length() < 13) {
-                    clearFields();
+                    /// Do not clear fields here
+                    // clearFields();
                     return;
                 }
                 //Once we have an ISBN, start a book intent
@@ -112,6 +115,12 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
         if (savedInstanceState != null) {
             ean.setText(savedInstanceState.getString(EAN_CONTENT));
             ean.setHint("");
+
+            Intent bookIntent = new Intent(getActivity(), BookService.class);
+            bookIntent.putExtra(BookService.EAN, savedInstanceState.getString(EAN_CONTENT));
+            bookIntent.setAction(BookService.FETCH_BOOK);
+            getActivity().startService(bookIntent);
+            AddBook.this.restartLoader();
         }
 
         return rootView;
